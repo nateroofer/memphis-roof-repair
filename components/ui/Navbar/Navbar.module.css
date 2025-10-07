@@ -1,0 +1,19 @@
+.root {
+  @apply sticky top-0 bg-white dark:bg-gray-900 z-40 transition-all duration-150 h-16 md:h-20 border-b border-gray-200 dark:border-gray-800 shadow-sm;
+}
+
+.link {
+  @apply inline-flex items-center leading-6 font-medium transition ease-in-out duration-75 cursor-pointer text-gray-700 dark:text-gray-300 rounded-md p-1;
+}
+
+.link:hover {
+  @apply text-zion-blue dark:text-zion-green;
+}
+
+.link:focus {
+  @apply outline-none text-zion-blue dark:text-zion-green ring-2 ring-zion-green ring-opacity-50;
+}
+
+.logo {
+  @apply cursor-pointer rounded-full transform duration-100 ease-in-out hover:scale-105;
+}
