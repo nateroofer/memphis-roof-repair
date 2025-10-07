@@ -10,7 +10,7 @@ export const metadata = generateMetadata({
 });
 
 // Sample blog posts - In production, this would come from a CMS or database
-export const blogPosts = [
+const blogPosts = [
   {
     slug: 'signs-you-need-roof-replacement',
     title: '10 Signs You Need a Roof Replacement',
