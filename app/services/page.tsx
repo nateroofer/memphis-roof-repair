@@ -1,4 +1,5 @@
 import { generateMetadata } from '@/lib/seoConfig';
+import { services } from '@/lib/servicesData';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -16,93 +17,6 @@ export const metadata = generateMetadata({
   ],
   path: '/services'
 });
-
-export const services = [
-  {
-    slug: 'roof-repair',
-    title: 'Roof Repair',
-    description:
-      'Expert roof repair services for leaks, damaged shingles, flashing issues, and more. Fast response times and quality workmanship.',
-    features: [
-      'Leak detection and repair',
-      'Shingle replacement',
-      'Flashing repair',
-      'Emergency repairs',
-      'Minor to major repairs'
-    ],
-    icon: '🔧'
-  },
-  {
-    slug: 'roof-replacement',
-    title: 'Roof Replacement',
-    description:
-      'Complete roof replacement services using premium materials from top manufacturers. Lifetime warranties available.',
-    features: [
-      'Full roof replacement',
-      'Premium material options',
-      'Warranty coverage',
-      'Expert installation',
-      'Clean-up included'
-    ],
-    icon: '🏠'
-  },
-  {
-    slug: 'storm-damage',
-    title: 'Storm Damage Repair',
-    description:
-      'Certified storm damage specialists. We handle insurance claims and provide emergency tarping services.',
-    features: [
-      'Emergency tarping',
-      'Insurance claim assistance',
-      'Wind damage repair',
-      'Hail damage assessment',
-      'Same-day service available'
-    ],
-    icon: '⛈️'
-  },
-  {
-    slug: 'roof-inspection',
-    title: 'Roof Inspection',
-    description:
-      'Comprehensive roof inspections by licensed professionals. Detailed reports with photos and recommendations.',
-    features: [
-      'Free inspections',
-      'Detailed photo reports',
-      'Drone inspections available',
-      'Pre-sale inspections',
-      'Maintenance recommendations'
-    ],
-    icon: '🔍'
-  },
-  {
-    slug: 'gutter-services',
-    title: 'Gutter Installation & Repair',
-    description:
-      'Professional gutter installation, repair, and cleaning services to protect your home from water damage.',
-    features: [
-      'Gutter installation',
-      'Gutter repair',
-      'Gutter cleaning',
-      'Downspout installation',
-      'Gutter guard installation'
-    ],
-    icon: '🌊'
-  },
-  {
-    slug: 'flat-roofing',
-    title: 'Flat & Commercial Roofing',
-    description:
-      'Specialized flat roofing services for commercial and residential properties. TPO, EPDM, and modified bitumen.',
-    features: [
-      'TPO roofing',
-      'EPDM installation',
-      'Modified bitumen',
-      'Flat roof repair',
-      'Commercial roofing'
-    ],
-    icon: '🏢'
-  }
-];
 
 export default function ServicesPage() {
   return (

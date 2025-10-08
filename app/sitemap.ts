@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { SITE_CONFIG } from '@/lib/seoConfig';
-import { services } from './services/page';
+import { services } from '@/lib/servicesData';
 import { blogPosts } from '@/lib/blogData';
 import { locations } from '@/lib/locationsData';
 
