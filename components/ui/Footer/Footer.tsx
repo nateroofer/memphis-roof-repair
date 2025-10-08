@@ -100,6 +100,29 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Legal Links */}
+          <div>
+            <h3 className="font-heading text-lg font-bold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-gray-300 hover:text-zion-green transition-colors"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-gray-300 hover:text-zion-green transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Services */}
           <div>
             <h3 className="font-heading text-lg font-bold mb-4">Services</h3>
