@@ -2,7 +2,7 @@ import { generateMetadata } from '@/lib/seoConfig';
 import LeadForm from '@/components/LeadForm';
 import RoofCostCalculator from '@/components/RoofCostCalculator';
 import { CheckCircle, Phone, Shield, Clock, Star, Award } from 'lucide-react';
-import { trackCTAClick, trackPhoneClick } from '@/utils/analytics';
+import ClientCTA from '@/components/ClientCTA';
 
 export const metadata = generateMetadata({
   title: 'Memphis Roof Repair Experts | Zion Roof',
@@ -97,20 +97,28 @@ export default function HomePage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <a 
+                <ClientCTA 
                   href="tel:+19013049466" 
                   className="cta-button group"
-                  onClick={() => trackPhoneClick('hero_section')}
+                  trackingData={{
+                    action: 'phone_click',
+                    label: '(901) 304-9466',
+                    location: 'hero_section'
+                  }}
                 >
                   <span className="flex items-center gap-3">
                     <Phone className="w-6 h-6" />
                     (901) 304-9466
                   </span>
-                </a>
-                <a 
+                </ClientCTA>
+                <ClientCTA 
                   href="#contact" 
                   className="glass px-8 py-4 rounded-xl border border-zion-green/30 text-white font-semibold hover:border-zion-green/60 transition-all duration-300 group"
-                  onClick={() => trackCTAClick('Get Free Quote', 'hero_section')}
+                  trackingData={{
+                    action: 'cta_click',
+                    label: 'Get Free Quote',
+                    location: 'hero_section'
+                  }}
                 >
                   <span className="flex items-center gap-3">
                     Get Free Quote
@@ -118,7 +126,7 @@ export default function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                </a>
+                </ClientCTA>
               </div>
               
               {/* Stats */}
@@ -264,13 +272,17 @@ export default function HomePage() {
         </div>
         
         <div className="text-center mt-12">
-          <a 
+          <ClientCTA 
             href="/services" 
             className="cta-button"
-            onClick={() => trackCTAClick('View All Services', 'services_preview')}
+            trackingData={{
+              action: 'cta_click',
+              label: 'View All Services',
+              location: 'services_preview'
+            }}
           >
             View All Services
-          </a>
+          </ClientCTA>
         </div>
       </section>
 
