@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seoConfig';
-import { services } from '../page';
+import { services } from '@/lib/servicesData';
 import { notFound } from 'next/navigation';
 import LeadForm from '@/components/LeadForm';
 import { CheckCircle, Phone } from 'lucide-react';

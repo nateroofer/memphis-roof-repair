@@ -142,10 +142,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <span className="bg-zion-green text-zion-blue px-4 py-2 rounded-full font-semibold">
               {post.category}
             </span>
-            <span className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              {post.readTime}
-            </span>
           </div>
 
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
