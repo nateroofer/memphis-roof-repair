@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
 import { SITE_CONFIG } from '@/lib/seoConfig';
 import { services } from './services/page';
-import { blogPosts } from './blog/page';
+import { blogPosts } from '@/lib/blogData';
+import { locations } from '@/lib/locationsData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_CONFIG.url;
@@ -56,7 +57,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6
   }));
 
-  return [...staticPages, ...servicePages, ...blogPages];
+  // Location pages
+  const locationPages = Object.keys(locations).map((slug) => ({
+    url: `${baseUrl}/locations/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9
+  }));
+
+  return [...staticPages, ...servicePages, ...blogPages, ...locationPages];
 }
 
 

@@ -1,4 +1,5 @@
 import { generateMetadata } from '@/lib/seoConfig';
+import { blogPosts } from '@/lib/blogData';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
@@ -8,76 +9,6 @@ export const metadata = generateMetadata({
     'Expert roofing tips, maintenance advice, and industry insights from Zion Roof. Learn about roof care, storm preparation, and more from Memphis\' trusted roofers.',
   path: '/blog'
 });
-
-// Sample blog posts - In production, this would come from a CMS or database
-const blogPosts = [
-  {
-    slug: 'signs-you-need-roof-replacement',
-    title: '10 Signs You Need a Roof Replacement',
-    excerpt:
-      'Learn the warning signs that indicate it\'s time for a new roof. From missing shingles to water damage, we cover everything Memphis homeowners need to know.',
-    author: 'John Smith',
-    date: '2024-01-15',
-    category: 'Maintenance',
-    readTime: '5 min read',
-    image: '🏠'
-  },
-  {
-    slug: 'preparing-roof-for-memphis-storms',
-    title: 'Preparing Your Roof for Memphis Storm Season',
-    excerpt:
-      'Memphis weather can be unpredictable. Discover how to protect your roof from severe storms, high winds, and hail damage with these expert tips.',
-    author: 'John Smith',
-    date: '2024-01-10',
-    category: 'Storm Damage',
-    readTime: '7 min read',
-    image: '⛈️'
-  },
-  {
-    slug: 'roof-maintenance-checklist',
-    title: 'Annual Roof Maintenance Checklist',
-    excerpt:
-      'Keep your roof in top condition with our comprehensive maintenance checklist. Learn what to inspect and when to call a professional.',
-    author: 'Mike Johnson',
-    date: '2024-01-05',
-    category: 'Maintenance',
-    readTime: '6 min read',
-    image: '✅'
-  },
-  {
-    slug: 'choosing-right-roofing-material',
-    title: 'Choosing the Right Roofing Material for Memphis Homes',
-    excerpt:
-      'Compare different roofing materials and find the best option for Memphis\' climate. We cover asphalt shingles, metal roofing, and more.',
-    author: 'Sarah Williams',
-    date: '2023-12-28',
-    category: 'Installation',
-    readTime: '8 min read',
-    image: '🔨'
-  },
-  {
-    slug: 'insurance-claims-roof-damage',
-    title: 'Navigating Insurance Claims for Roof Damage',
-    excerpt:
-      'Step-by-step guide to filing an insurance claim for roof damage. Learn what documentation you need and how to work with adjusters.',
-    author: 'John Smith',
-    date: '2023-12-20',
-    category: 'Insurance',
-    readTime: '10 min read',
-    image: '📋'
-  },
-  {
-    slug: 'energy-efficient-roofing',
-    title: 'How Energy-Efficient Roofing Can Lower Your Bills',
-    excerpt:
-      'Discover how modern roofing materials and techniques can reduce your energy costs. Learn about cool roofs, proper ventilation, and more.',
-    author: 'Mike Johnson',
-    date: '2023-12-15',
-    category: 'Energy Efficiency',
-    readTime: '6 min read',
-    image: '💡'
-  }
-];
 
 const categories = [
   'All Posts',
@@ -136,10 +67,6 @@ export default function BlogPage() {
                 <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
                   <span className="bg-zion-green text-zion-blue px-3 py-1 rounded-full font-semibold">
                     {post.category}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    {post.readTime}
                   </span>
                 </div>
                 <h2 className="font-heading text-xl font-bold mb-3 group-hover:text-zion-blue transition-colors">

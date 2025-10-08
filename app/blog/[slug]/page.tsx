@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seoConfig';
-import { blogPosts } from '../page';
+import { blogPosts } from '@/lib/blogData';
 import { notFound } from 'next/navigation';
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
