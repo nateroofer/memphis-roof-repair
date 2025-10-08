@@ -2,6 +2,7 @@ import { generateMetadata } from '@/lib/seoConfig';
 import LeadForm from '@/components/LeadForm';
 import RoofCostCalculator from '@/components/RoofCostCalculator';
 import { CheckCircle, Phone, Shield, Clock, Star, Award } from 'lucide-react';
+import { trackCTAClick, trackPhoneClick } from '@/utils/analytics';
 
 export const metadata = generateMetadata({
   title: 'Memphis Roof Repair Experts | Zion Roof',
@@ -96,13 +97,21 @@ export default function HomePage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <a href="tel:+19013049466" className="cta-button group">
+                <a 
+                  href="tel:+19013049466" 
+                  className="cta-button group"
+                  onClick={() => trackPhoneClick('hero_section')}
+                >
                   <span className="flex items-center gap-3">
                     <Phone className="w-6 h-6" />
                     (901) 304-9466
                   </span>
                 </a>
-                <a href="#contact" className="glass px-8 py-4 rounded-xl border border-zion-green/30 text-white font-semibold hover:border-zion-green/60 transition-all duration-300 group">
+                <a 
+                  href="#contact" 
+                  className="glass px-8 py-4 rounded-xl border border-zion-green/30 text-white font-semibold hover:border-zion-green/60 transition-all duration-300 group"
+                  onClick={() => trackCTAClick('Get Free Quote', 'hero_section')}
+                >
                   <span className="flex items-center gap-3">
                     Get Free Quote
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -255,7 +264,11 @@ export default function HomePage() {
         </div>
         
         <div className="text-center mt-12">
-          <a href="/services" className="cta-button">
+          <a 
+            href="/services" 
+            className="cta-button"
+            onClick={() => trackCTAClick('View All Services', 'services_preview')}
+          >
             View All Services
           </a>
         </div>
