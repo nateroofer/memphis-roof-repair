@@ -1,38 +1,43 @@
 import { generateMetadata } from '@/lib/seoConfig';
 import LeadForm from '@/components/LeadForm';
 import RoofCostCalculator from '@/components/RoofCostCalculator';
-import { Shield, Award, MapPin, Phone, Star, Clock } from 'lucide-react';
+import { CheckCircle, Phone, Shield, Clock, Star, Award } from 'lucide-react';
 
 export const metadata = generateMetadata({
-  title: 'Memphis Premier Roofing Contractor',
+  title: 'Memphis Roof Repair Experts | Zion Roof',
   description:
-    'Licensed & insured Memphis roofing contractor. Free roof inspections, storm damage repair, roof replacement & more. Call (901) 555-ROOF for a free estimate today!'
+    'Professional roofing services in Memphis, TN. Roof repair, replacement, storm damage, and emergency services. Licensed, insured, and locally trusted. Free estimates.',
+  keywords: [
+    'memphis roof repair',
+    'roofing contractor memphis',
+    'roof replacement memphis',
+    'storm damage repair',
+    'emergency roof repair',
+    'roofing company memphis tn'
+  ],
+  path: '/'
 });
 
 const benefits = [
   {
     icon: Shield,
     title: 'Licensed & Insured',
-    description:
-      'Fully licensed, bonded, and insured for your protection and peace of mind.'
+    description: 'Fully certified professionals with comprehensive insurance coverage'
   },
   {
-    icon: MapPin,
-    title: 'Memphis Local',
-    description:
-      'Proudly serving Memphis and surrounding areas for over 15 years.'
+    icon: Clock,
+    title: 'Lightning Fast',
+    description: 'Emergency response in under 2 hours, 24/7 availability'
   },
   {
     icon: Award,
-    title: 'Storm Damage Experts',
-    description:
-      'Certified storm damage specialists. We work with all insurance companies.'
+    title: 'Premium Quality',
+    description: 'Cutting-edge materials and precision craftsmanship'
   },
   {
     icon: Star,
-    title: 'Free Estimates',
-    description:
-      'No-obligation free roof inspections and estimates for all services.'
+    title: 'Smart Pricing',
+    description: 'AI-powered estimates with transparent, competitive rates'
   }
 ];
 
@@ -40,43 +45,20 @@ const testimonials = [
   {
     name: 'Sarah Johnson',
     location: 'Germantown, TN',
-    rating: 5,
-    text: 'Zion Roof replaced our entire roof after storm damage. They were professional, fast, and worked directly with our insurance. Highly recommend!'
+    text: 'Zion Roof exceeded our expectations. Their team was professional, efficient, and the quality of work was outstanding.',
+    rating: 5
   },
   {
-    name: 'Michael Davis',
+    name: 'Michael Chen',
     location: 'Collierville, TN',
-    rating: 5,
-    text: 'Best roofing company in Memphis! They repaired our leak quickly and at a fair price. The crew was respectful and cleaned up perfectly.'
+    text: 'After storm damage, Zion Roof handled everything including insurance. Made the whole process stress-free.',
+    rating: 5
   },
   {
-    name: 'Jennifer Williams',
-    location: 'East Memphis',
-    rating: 5,
-    text: 'Outstanding service from start to finish. Free inspection, detailed estimate, and beautiful new roof. Worth every penny!'
-  }
-];
-
-const services = [
-  {
-    name: 'Roof Repair',
-    description: 'Expert repairs for leaks, damaged shingles, and more',
-    image: '🔧'
-  },
-  {
-    name: 'Roof Replacement',
-    description: 'Complete roof replacement with premium materials',
-    image: '🏠'
-  },
-  {
-    name: 'Storm Damage',
-    description: 'Emergency storm damage repair and insurance claims',
-    image: '⛈️'
-  },
-  {
-    name: 'Inspections',
-    description: 'Free comprehensive roof inspections',
-    image: '🔍'
+    name: 'Lisa Rodriguez',
+    location: 'Bartlett, TN',
+    text: 'Fair pricing, excellent communication, and beautiful work. Highly recommend Zion Roof to anyone.',
+    rating: 5
   }
 ];
 
@@ -84,213 +66,338 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-zion-blue via-zion-blue-light to-zion-blue-dark text-white">
-        <div className="absolute inset-0 bg-[url('/roof-texture.jpg')] bg-cover bg-center opacity-10" />
-        <div className="relative section-container text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-              Memphis' Trusted{' '}
-              <span className="text-zion-green">Roofing Experts</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Licensed, insured, and locally owned. Free roof inspections & same-day estimates.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <a
-                href="tel:9015557663"
-                className="cta-button inline-flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Call (901) 555-ROOF
-              </a>
-              <a
-                href="#contact-form"
-                className="bg-white text-zion-blue font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg"
-              >
-                Get Free Estimate
-              </a>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-zion-green" />
-                <span>24/7 Emergency Service</span>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 cyber-grid opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-zion-blue via-zion-blue-light to-zion-blue"></div>
+        
+        {/* Floating elements */}
+        <div className="absolute inset-0 floating-elements"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10 animate-slide-left">
+              <div className="space-y-6">
+                <div className="inline-block glass px-6 py-3 rounded-full border border-zion-green/30">
+                  <span className="text-zion-green font-semibold text-sm uppercase tracking-wider">
+                    Memphis's Premier Roofing Experts
+                  </span>
+                </div>
+                <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                  <span className="gradient-text">Zion</span>
+                  <span className="block text-white">Roof</span>
+                  <span className="block text-zion-green text-glow">Repair</span>
+                </h1>
               </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-zion-green" />
-                <span>4.9/5 Rating (247 Reviews)</span>
+              
+              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl">
+                Experience the future of roofing with cutting-edge technology, 
+                premium materials, and expert craftsmanship that protects your Memphis home.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6">
+                <a href="tel:+19013049466" className="cta-button group">
+                  <span className="flex items-center gap-3">
+                    <Phone className="w-6 h-6" />
+                    (901) 304-9466
+                  </span>
+                </a>
+                <a href="#contact" className="glass px-8 py-4 rounded-xl border border-zion-green/30 text-white font-semibold hover:border-zion-green/60 transition-all duration-300 group">
+                  <span className="flex items-center gap-3">
+                    Get Free Quote
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-8 pt-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-zion-green">20+</div>
+                  <div className="text-sm text-gray-300">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-zion-green">1000+</div>
+                  <div className="text-sm text-gray-300">Happy Customers</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-zion-green">24/7</div>
+                  <div className="text-sm text-gray-300">Emergency Service</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative animate-slide-right">
+              <div className="futuristic-card hover-lift">
+                <div className="text-center space-y-6">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-zion-green to-zion-blue-light rounded-2xl flex items-center justify-center animate-float">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Smart Roof Calculator</h3>
+                  <p className="text-gray-300">Get an instant estimate for your roofing project</p>
+                  <RoofCostCalculator />
+                </div>
               </div>
             </div>
           </div>
         </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-zion-green rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-zion-green rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
       </section>
 
-      {/* Benefits Grid */}
-      <section className="section-container bg-gray-50 dark:bg-gray-800">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-4xl font-bold mb-4">
-            Why Choose Zion Roof?
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Memphis' most trusted roofing contractor since 2009
-          </p>
+      {/* Benefits Section */}
+      <section className="section-container relative">
+        <div className="text-center mb-16">
+          <div className="inline-block glass px-6 py-3 rounded-full border border-zion-green/30 mb-6">
+            <span className="text-zion-green font-semibold text-sm uppercase tracking-wider">
+              Why Choose Zion Roof
+            </span>
+          </div>
+          <h2 className="section-heading text-white">Advanced Roofing Solutions</h2>
         </div>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
-              >
-                <div className="w-14 h-14 bg-zion-green rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-7 h-7 text-zion-blue" />
+          {benefits.map((benefit, index) => (
+            <div key={index} className="futuristic-card text-center hover-lift group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-zion-green to-zion-blue-light rounded-2xl flex items-center justify-center group-hover:animate-glow transition-all duration-300">
+                  <benefit.icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-xl font-bold mb-2 group-hover:text-zion-blue dark:group-hover:text-zion-green transition-colors">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {benefit.description}
-                </p>
+                <div className="absolute -inset-1 bg-gradient-to-r from-zion-green to-zion-blue-light rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
               </div>
-            );
-          })}
+              <h3 className="font-heading text-xl font-bold mb-4 text-white">{benefit.title}</h3>
+              <p className="text-gray-300">{benefit.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-4xl font-bold mb-4">
-            Our Roofing Services
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Comprehensive roofing solutions for Memphis homes and businesses
-          </p>
+      <section className="section-container bg-gradient-to-br from-zion-blue-light to-zion-blue">
+        <div className="text-center mb-16">
+          <div className="inline-block glass px-6 py-3 rounded-full border border-zion-green/30 mb-6">
+            <span className="text-zion-green font-semibold text-sm uppercase tracking-wider">
+              Our Services
+            </span>
+          </div>
+          <h2 className="section-heading text-white">Complete Roofing Solutions</h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-zion-blue to-zion-blue-light text-white p-6 rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-2xl group"
-            >
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{service.image}</div>
-              <h3 className="font-heading text-xl font-bold mb-2 group-hover:text-zion-green transition-colors">
-                {service.name}
-              </h3>
-              <p className="text-gray-200">{service.description}</p>
-            </div>
-          ))}
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="futuristic-card hover-lift">
+            <div className="text-4xl mb-4">🔧</div>
+            <h3 className="font-heading text-xl font-bold mb-3 text-white">Roof Repair</h3>
+            <p className="text-gray-300 mb-4">Expert repairs for leaks, damaged shingles, and structural issues.</p>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Leak detection & repair
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Shingle replacement
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Emergency repairs
+              </li>
+            </ul>
+          </div>
+          
+          <div className="futuristic-card hover-lift">
+            <div className="text-4xl mb-4">🏠</div>
+            <h3 className="font-heading text-xl font-bold mb-3 text-white">Roof Replacement</h3>
+            <p className="text-gray-300 mb-4">Complete roof replacement with premium materials and expert installation.</p>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Full roof replacement
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Premium materials
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Lifetime warranties
+              </li>
+            </ul>
+          </div>
+          
+          <div className="futuristic-card hover-lift">
+            <div className="text-4xl mb-4">⛈️</div>
+            <h3 className="font-heading text-xl font-bold mb-3 text-white">Storm Damage</h3>
+            <p className="text-gray-300 mb-4">Certified storm damage specialists with insurance claim assistance.</p>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Emergency tarping
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Insurance assistance
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-zion-green" />
+                Same-day service
+              </li>
+            </ul>
+          </div>
         </div>
+        
         <div className="text-center mt-12">
-          <a
-            href="/services"
-            className="inline-block bg-zion-blue text-white font-bold px-8 py-4 rounded-lg hover:bg-zion-blue-light transition-colors duration-200"
-          >
+          <a href="/services" className="cta-button">
             View All Services
           </a>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="section-container bg-gray-50 dark:bg-gray-800">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-4xl font-bold mb-4">
-            What Our Customers Say
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Trusted by hundreds of Memphis homeowners
-          </p>
+      <section className="section-container">
+        <div className="text-center mb-16">
+          <div className="inline-block glass px-6 py-3 rounded-full border border-zion-green/30 mb-6">
+            <span className="text-zion-green font-semibold text-sm uppercase tracking-wider">
+              Customer Reviews
+            </span>
+          </div>
+          <h2 className="section-heading text-white">What Our Customers Say</h2>
         </div>
+        
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-zion-green"
-            >
-              <div className="flex gap-1 mb-4">
+            <div key={index} className="futuristic-card hover-lift">
+              <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-zion-green text-zion-green"
-                  />
+                  <Star key={i} className="w-5 h-5 text-zion-green fill-current" />
                 ))}
               </div>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 italic text-lg">
-                "{testimonial.text}"
-              </p>
-              <div className="border-t pt-4">
-                <p className="font-bold text-zion-blue dark:text-white">{testimonial.name}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {testimonial.location}
-                </p>
+              <p className="text-gray-300 mb-6 italic">"{testimonial.text}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-zion-green to-zion-blue-light rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">
+                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                  </span>
+                </div>
+                <div>
+                  <div className="font-semibold text-white">{testimonial.name}</div>
+                  <div className="text-sm text-gray-400">{testimonial.location}</div>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Service Area Map */}
-      <section className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-4xl font-bold mb-4">
-            Proudly Serving Memphis & Surrounding Areas
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Germantown • Collierville • Bartlett • Cordova • East Memphis
-          </p>
-        </div>
+      {/* Contact Section */}
+      <section id="contact" className="section-container bg-gradient-to-br from-zion-blue to-zion-blue-light">
         <div className="max-w-4xl mx-auto">
-          <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209006.8018813567!2d-90.17939795!3d35.1495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d57e1eea439745%3A0xd193f315601ab6fb!2sMemphis%2C%20TN!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Zion Roof Service Area - Memphis, TN"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section
-        id="contact-form"
-        className="section-container bg-gradient-to-br from-zion-blue to-zion-blue-light text-white"
-      >
-        <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl font-bold mb-4">
-              Get Your Free Roof Inspection
-            </h2>
-            <p className="text-xl text-gray-200">
-              Fill out the form below and we'll contact you within 24 hours
+            <div className="inline-block glass px-6 py-3 rounded-full border border-zion-green/30 mb-6">
+              <span className="text-zion-green font-semibold text-sm uppercase tracking-wider">
+                Get Your Free Estimate
+              </span>
+            </div>
+            <h2 className="section-heading text-white">Ready to Protect Your Home?</h2>
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+              Contact us today for a free, no-obligation estimate. Our experts will assess your roof and provide you with a detailed quote.
             </p>
           </div>
-          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8">
-            <LeadForm source="homepage" />
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-8">
+              <div className="futuristic-card">
+                <h3 className="font-heading text-2xl font-bold mb-6 text-white">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-zion-green to-zion-blue-light rounded-xl flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white">Phone</div>
+                      <div className="text-gray-300">(901) 304-9466</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-zion-green to-zion-blue-light rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white">Email</div>
+                      <div className="text-gray-300">info@memphisroof.repair</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-zion-green to-zion-blue-light rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white">Service Area</div>
+                      <div className="text-gray-300">Memphis & Surrounding Areas</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="futuristic-card">
+                <h3 className="font-heading text-2xl font-bold mb-6 text-white">Service Hours</h3>
+                <div className="space-y-3 text-gray-300">
+                  <div className="flex justify-between">
+                    <span>Monday - Friday</span>
+                    <span>7:00 AM - 7:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Saturday</span>
+                    <span>8:00 AM - 5:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Emergency Service</span>
+                    <span className="text-zion-green">24/7 Available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <LeadForm source="homepage" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="section-container text-center bg-zion-green">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-zion-blue mb-6">
-            Ready to Fix Your Roof?
-          </h2>
-          <p className="text-xl text-zion-blue-dark mb-8">
-            Call now for same-day service and free estimates!
+      {/* Map Section */}
+      <section className="section-container">
+        <div className="text-center mb-12">
+          <h2 className="section-heading text-white">Serving Memphis & Surrounding Areas</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            We proudly serve Memphis and all surrounding communities with professional roofing services.
           </p>
-          <a
-            href="tel:9015557663"
-            className="inline-flex items-center gap-2 bg-zion-blue text-white font-bold px-12 py-6 rounded-lg hover:bg-zion-blue-light transition-all duration-200 shadow-lg text-2xl"
-          >
-            <Phone className="w-6 h-6" />
-            (901) 555-ROOF
-          </a>
+        </div>
+        
+        <div className="futuristic-card p-0 overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.5!2d-90.0489!3d35.1495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d57e0d1c0c8b8b%3A0x8b0c8b8b8b8b8b8b!2sMemphis%2C%20TN!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-96"
+          ></iframe>
         </div>
       </section>
     </>
