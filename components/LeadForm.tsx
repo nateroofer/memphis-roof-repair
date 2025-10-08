@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { toast } from '@/components/ui/Toasts/use-toast';
+import { trackFormSubmission, trackQuoteRequest } from '@/utils/analytics';
 
 interface LeadFormProps {
   source?: string;

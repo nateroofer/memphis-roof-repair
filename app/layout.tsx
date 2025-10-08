@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/Toasts/toaster';
 import { PropsWithChildren, Suspense } from 'react';
 import { generateMetadata, generateLocalBusinessSchema } from '@/lib/seoConfig';
 import { Poppins, Inter } from 'next/font/google';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import 'styles/main.css';
 
 const poppins = Poppins({
