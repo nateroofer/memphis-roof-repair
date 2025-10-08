@@ -234,7 +234,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     {relatedPost.title}
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {relatedPost.readTime}
+                    {relatedPost.category}
                   </p>
                 </Link>
               ))}
