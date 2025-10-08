@@ -214,16 +214,40 @@ export default function StructuredData({
 }
 
 // Convenience components for specific schema types
-export function LocalBusinessSchema({ reviews }: { reviews?: Review[] }) {
+export function LocalBusinessSchema({ reviews, schema }: { reviews?: Review[]; schema?: any }) {
+  if (schema) {
+    return (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema, null, 2) }}
+      />
+    );
+  }
   return <StructuredData type="LocalBusiness" reviews={reviews} />;
 }
 
-export function ServiceSchema({ service }: { service: Service }) {
-  return <StructuredData type="Service" service={service} />;
+export function ServiceSchema({ service, schema }: { service?: Service; schema?: any }) {
+  if (schema) {
+    return (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema, null, 2) }}
+      />
+    );
+  }
+  return <StructuredData type="Service" service={service!} />;
 }
 
-export function FAQSchema({ faqs }: { faqs: FAQ[] }) {
-  return <StructuredData type="FAQ" faqs={faqs} />;
+export function FAQSchema({ faqs, schema }: { faqs?: FAQ[]; schema?: any }) {
+  if (schema) {
+    return (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema, null, 2) }}
+      />
+    );
+  }
+  return <StructuredData type="FAQ" faqs={faqs!} />;
 }
 
 export function ReviewSchema({ reviews }: { reviews: Review[] }) {

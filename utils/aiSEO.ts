@@ -3,10 +3,12 @@
 
 import OpenAI from 'openai';
 
-// Initialize OpenAI client (server-side only!)
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+// Initialize OpenAI client (server-side only!) with conditional check
+const openai = process.env.OPENAI_API_KEY 
+  ? new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY
+    })
+  : null;
 
 const MODEL = 'gpt-4-turbo-preview'; // Use gpt-4-turbo or gpt-3.5-turbo for cost efficiency
 const EMBEDDING_MODEL = 'text-embedding-3-large'; // 1536 dimensions
@@ -26,6 +28,9 @@ export async function generateSEOContent(
   metaDescription: string;
   slug: string;
 }> {
+  if (!openai) {
+    throw new Error('OpenAI API key not configured');
+  }
   const prompt = `You are an expert SEO copywriter for Zion Roof, a Memphis-based roofing company.
 
 Write a comprehensive, LLM-optimized blog post about "${topic}" for homeowners in ${location}.
@@ -51,7 +56,7 @@ metaDescription: "Your meta description here"
 ---`;
 
   try {
-    const completion = await openai.chat.completions.create({
+    const completion = await openai!.chat.completions.create({
       model: MODEL,
       messages: [
         {
@@ -131,7 +136,7 @@ Example format:
 }`;
 
   try {
-    const completion = await openai.chat.completions.create({
+    const completion = await openai!.chat.completions.create({
       model: 'gpt-3.5-turbo', // Use cheaper model for meta generation
       messages: [
         {
@@ -190,7 +195,7 @@ Focus on:
 Return ONLY valid JSON, no markdown.`;
 
   try {
-    const completion = await openai.chat.completions.create({
+    const completion = await openai!.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         {
@@ -228,8 +233,11 @@ Return ONLY valid JSON, no markdown.`;
  * @returns 1536-dimensional embedding vector
  */
 export async function generateEmbedding(text: string): Promise<number[]> {
+  if (!openai) {
+    throw new Error('OpenAI API key not configured');
+  }
   try {
-    const response = await openai.embeddings.create({
+    const response = await openai!.embeddings.create({
       model: EMBEDDING_MODEL,
       input: text.substring(0, 8000) // Limit to ~8k chars to stay within token limits
     });
@@ -251,6 +259,9 @@ export async function generateEmbedding(text: string): Promise<number[]> {
 export async function batchGenerateEmbeddings(
   texts: string[]
 ): Promise<number[][]> {
+  if (!openai) {
+    throw new Error('OpenAI API key not configured');
+  }
   const BATCH_SIZE = 50; // Process 50 at a time to stay under rate limits
   const embeddings: number[][] = [];
 
@@ -258,7 +269,7 @@ export async function batchGenerateEmbeddings(
     const batch = texts.slice(i, i + BATCH_SIZE);
 
     try {
-      const response = await openai.embeddings.create({
+      const response = await openai!.embeddings.create({
         model: EMBEDDING_MODEL,
         input: batch.map((text) => text.substring(0, 8000))
       });
@@ -302,7 +313,7 @@ Return as JSON array:
 ]`;
 
   try {
-    const completion = await openai.chat.completions.create({
+    const completion = await openai!.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         {
